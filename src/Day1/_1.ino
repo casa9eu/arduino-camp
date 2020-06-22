@@ -1,14 +1,15 @@
+const int DigPin = 5;
+const int Waiter = 1000;
+
 void setup()
 {
-  pinMode(5, OUTPUT);
+	pinMode(DigPin, OUTPUT);
 }
 
 void loop()
 {
- 
-    digitalWrite(5, HIGH);
-    delay(1000); // Wait for 1000 millisecond(s)
-    digitalWrite(5, LOW);
-    delay(1000); // Wait for 1000 millisecond(s)
-  
+	digitalWrite(DigPin, HIGH);
+	delay(Waiter); // Wait for 1000 millisecond(s)
+	digitalWrite(DigPin, LOW);
+	delay(Waiter); // Wait for 1000 millisecond(s)
 }
