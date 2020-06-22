@@ -1,5 +1,6 @@
-void setup()
-{
+const int Waiter = 1000;
+
+void setup(){
   pinMode(10, OUTPUT);
   pinMode(13, OUTPUT);
   pinMode(9, OUTPUT);
@@ -13,87 +14,85 @@ void setup()
   pinMode(6, OUTPUT);
 }
 
-void loop()
-{
+void loop(){
+
 //green
   digitalWrite(6,HIGH);
   delay(10);
   nine();
-  delay(1000);
-   eight();
-  delay(1000);
-   seven();
-  delay(1000);
-   six();
-  delay(1000);
-   five();
-  delay(1000);
-   four();
-  delay(1000);
-   three();
-  delay(1000);
-   two();
-  delay(1000);
-   one();
-  delay(1000);
-   zero();
-  delay(1000);
+  delay(Waiter);
+  eight();
+  delay(Waiter);
+  seven();
+  delay(Waiter);
+  six();
+  delay(Waiter);
+  five();
+  delay(Waiter);
+  four();
+  delay(Waiter);
+  three();
+  delay(Waiter);
+  two();
+  delay(Waiter);
+  one();
+  delay(Waiter);
+  zero();
+  delay(Waiter);
   digitalWrite(6,LOW);
 
 //yellow
-digitalWrite(5,HIGH);
+  digitalWrite(5,HIGH);
   delay(10);
   nine();
-  delay(1000);
-   eight();
-  delay(1000);
-   seven();
-  delay(1000);
-   six();
-  delay(1000);
-   five();
-  delay(1000);
-   four();
-  delay(1000);
-   three();
-  delay(1000);
-   two();
-  delay(1000);
-   one();
-  delay(1000);
-   zero();
-  delay(1000);
+  delay(Waiter);
+  eight();
+  delay(Waiter);
+  seven();
+  delay(Waiter);
+  six();
+  delay(Waiter);
+  five();
+  delay(Waiter);
+  four();
+  delay(Waiter);
+  three();
+  delay(Waiter);
+  two();
+  delay(Waiter);
+  one();
+  delay(Waiter);
+  zero();
+  delay(Waiter);
   digitalWrite(5,LOW);  
 
 //red
-digitalWrite(3,HIGH);
+  digitalWrite(3,HIGH);
   delay(10);
   nine();
-  delay(1000);
-   eight();
-  delay(1000);
-   seven();
-  delay(1000);
-   six();
-  delay(1000);
-   five();
-  delay(1000);
-   four();
-  delay(1000);
-   three();
-  delay(1000);
-   two();
-  delay(1000);
-   one();
-  delay(1000);
-   zero();
-  delay(1000);
-  digitalWrite(3,LOW);
-  
- 
+  delay(Waiter);
+  eight();
+  delay(Waiter);
+  seven();
+  delay(Waiter);
+  six();
+  delay(Waiter);
+  five();
+  delay(Waiter);
+  four();
+  delay(Waiter);
+  three();
+  delay(Waiter);
+  two();
+  delay(Waiter);
+  one();
+  delay(Waiter);
+  zero();
+  delay(Waiter);
+  digitalWrite(3,LOW); 
 }
-void one(){
-// 1
+
+void enableAll(){
   digitalWrite(7,HIGH);
   digitalWrite(8, HIGH);
   digitalWrite(9, HIGH);
@@ -101,20 +100,19 @@ void one(){
   digitalWrite(11, HIGH);
   digitalWrite(12, HIGH);
   digitalWrite(13, HIGH);
+}
+
+void one(){
+  enableAll();
   delay(3);
   
   digitalWrite(10, LOW);
   digitalWrite(13, LOW);
 }
+
 void two(){
   // 2
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(10, LOW);
@@ -123,15 +121,10 @@ void two(){
   digitalWrite(11, LOW);
   digitalWrite(12, LOW);
 }
+
 void three(){
   // 3
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(10, LOW);
@@ -140,15 +133,10 @@ void three(){
   digitalWrite(7, LOW);
   digitalWrite(9, LOW);
 }
+
 void four(){
   // 4
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(8, LOW);
@@ -156,15 +144,10 @@ void four(){
   digitalWrite(13, LOW);
   digitalWrite(7, LOW);
 }
+
 void five(){
   // 5
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(7, LOW);
@@ -173,15 +156,10 @@ void five(){
   digitalWrite(11, LOW);
   digitalWrite(12, LOW);
 }
+
 void six(){
   // 6
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(7, LOW);
@@ -191,30 +169,20 @@ void six(){
   digitalWrite(12, LOW);
   digitalWrite(13, LOW);
 }
+
 void seven(){
   // 7
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(10, LOW);
   digitalWrite(13, LOW);
   digitalWrite(9, LOW);
 }
+
 void eight(){
   // 8
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(7, LOW);
@@ -225,15 +193,10 @@ void eight(){
   digitalWrite(12, LOW);
   digitalWrite(13, LOW);
 }
+
 void nine(){
   // 9
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(7, LOW);
@@ -243,15 +206,10 @@ void nine(){
   digitalWrite(12, LOW);
   digitalWrite(13, LOW);
 }
+
 void zero(){
   // 0
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
   
   digitalWrite(8, LOW);
