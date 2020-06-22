@@ -1,206 +1,162 @@
-void setup()
-{
-  pinMode(10, OUTPUT);
-  pinMode(13, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(8, OUTPUT);
+const int Sigment1 = 7;
+const int Sigment2 = 8;
+const int Sigment3 = 9;
+const int Sigment4 = 10;
+const int Sigment5 = 11;
+const int Sigment6 = 12;
+const int Sigment7 = 13;
+
+const int Waiter = 1000;
+
+void setup(){
+  pinMode(Sigment4, OUTPUT);
+  pinMode(Sigment7, OUTPUT);
+  pinMode(Sigment3, OUTPUT);
+  pinMode(Sigment1, OUTPUT);
+  pinMode(Sigment5, OUTPUT);
+  pinMode(Sigment6, OUTPUT);
+  pinMode(Sigment2, OUTPUT);
 }
 
-void loop()
-{
+void loop(){
   delay(10);
   nine();
-  delay(1000);
-   eight();
-  delay(1000);
-   seven();
-  delay(1000);
-   six();
-  delay(1000);
-   five();
-  delay(1000);
-   four();
-  delay(1000);
-   three();
-  delay(1000);
-   two();
-  delay(1000);
-   one();
-  delay(1000);
-   zero();
-  delay(1000);
-  
- 
+  delay(Waiter);
+  eight();
+  delay(Waiter);
+  seven();
+  delay(Waiter);
+  six();
+  delay(Waiter);
+  five();
+  delay(Waiter);
+  four();
+  delay(Waiter);
+  three();
+  delay(Waiter);
+  two();
+  delay(Waiter);
+  one();
+  delay(Waiter);
+  zero();
+  delay(Waiter);
 }
+
+void enableAll(){
+  digitalWrite(Sigment1, HIGH);
+  digitalWrite(Sigment2, HIGH);
+  digitalWrite(Sigment3, HIGH);
+  digitalWrite(Sigment4, HIGH);
+  digitalWrite(Sigment5, HIGH);
+  digitalWrite(Sigment6, HIGH);
+  digitalWrite(Sigment7, HIGH);
+}
+
 void one(){
-// 1
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(10, LOW);
-  digitalWrite(13, LOW);
+
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment7, LOW);
 }
+
 void two(){
-  // 2
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(10, LOW);
-  digitalWrite(9, LOW);
-  digitalWrite(7, LOW);
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
+
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment3, LOW);
+  digitalWrite(Sigment1, LOW);
+  digitalWrite(Sigment5, LOW);
+  digitalWrite(Sigment6, LOW);
 }
+
 void three(){
-  // 3
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(10, LOW);
-  digitalWrite(13, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(7, LOW);
-  digitalWrite(9, LOW);
+
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment7, LOW);
+  digitalWrite(Sigment6, LOW);
+  digitalWrite(Sigment1, LOW);
+  digitalWrite(Sigment3, LOW);
 }
+
 void four(){
-  // 4
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(8, LOW);
-  digitalWrite(10, LOW);
-  digitalWrite(13, LOW);
-  digitalWrite(7, LOW);
+
+  digitalWrite(Sigment2, LOW);
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment7, LOW);
+  digitalWrite(Sigment1, LOW);
 }
+
 void five(){
-  // 5
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(7, LOW);
-  digitalWrite(9, LOW);
-  digitalWrite(10, LOW);
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
+
+  digitalWrite(Sigment1, LOW);
+  digitalWrite(Sigment3, LOW);
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment5, LOW);
+  digitalWrite(Sigment6, LOW);
 }
+
 void six(){
-  // 6
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(13, LOW);
+
+  digitalWrite(Sigment1, LOW);
+  digitalWrite(Sigment2, LOW);
+  digitalWrite(Sigment3, LOW);
+  digitalWrite(Sigment5, LOW);
+  digitalWrite(Sigment6, LOW);
+  digitalWrite(Sigment7, LOW);
 }
+
 void seven(){
-  // 7
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(10, LOW);
-  digitalWrite(13, LOW);
-  digitalWrite(9, LOW);
+
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment7, LOW);
+  digitalWrite(Sigment3, LOW);
 }
+
 void eight(){
-  // 8
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  digitalWrite(10, LOW);
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(13, LOW);
+
+  digitalWrite(Sigment1, LOW);
+  digitalWrite(Sigment2, LOW);
+  digitalWrite(Sigment3, LOW);
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment5, LOW);
+  digitalWrite(Sigment6, LOW);
+  digitalWrite(Sigment7, LOW);
 }
+
 void nine(){
-  // 9
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(7, LOW);
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  digitalWrite(10, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(13, LOW);
+
+  digitalWrite(Sigment1, LOW);
+  digitalWrite(Sigment2, LOW);
+  digitalWrite(Sigment3, LOW);
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment6, LOW);
+  digitalWrite(Sigment7, LOW);
 }
+
 void zero(){
-  // 0
-  digitalWrite(7,HIGH);
-  digitalWrite(8, HIGH);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
-  digitalWrite(12, HIGH);
-  digitalWrite(13, HIGH);
+  enableAll();
   delay(3);
-  
-  digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
-  digitalWrite(10, LOW);
-  digitalWrite(11, LOW);
-  digitalWrite(12, LOW);
-  digitalWrite(13, LOW);
+
+  digitalWrite(Sigment2, LOW);
+  digitalWrite(Sigment3, LOW);
+  digitalWrite(Sigment4, LOW);
+  digitalWrite(Sigment5, LOW);
+  digitalWrite(Sigment6, LOW);
+  digitalWrite(Sigment7, LOW);
 }
