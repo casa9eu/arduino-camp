@@ -1,19 +1,25 @@
+const int RedLed = 6;
+const int YelLed = 5;
+const int GreLed = 3;
+
+const int Waiter = 2000;  // Wait for 2000 millisecond(s)
+
 void setup()
 {
-  pinMode(6, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(3, OUTPUT);
+  pinMode(RedLed, OUTPUT);
+  pinMode(YelLed, OUTPUT);
+  pinMode(GreLed, OUTPUT);
 }
 
 void loop()
 {
-  digitalWrite(6, HIGH);
-  delay(2000); // Wait for 2000 millisecond(s)
-  digitalWrite(6, LOW);
-  digitalWrite(5, HIGH);
-  delay(2000); // Wait for 2000 millisecond(s)
-  digitalWrite(5, LOW);
-  digitalWrite(3, HIGH);
-  delay(2000); // Wait for 2000 millisecond(s)
-  digitalWrite(3, LOW);
+  digitalWrite(RedLed, HIGH);
+  delay(Waiter);
+  digitalWrite(RedLed, LOW);
+  digitalWrite(YelLed, HIGH);
+  delay(Waiter);
+  digitalWrite(YelLed, LOW);
+  digitalWrite(GreLed, HIGH);
+  delay(Waiter);
+  digitalWrite(GreLed, LOW);
 }
