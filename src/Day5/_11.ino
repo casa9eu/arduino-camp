@@ -1,35 +1,30 @@
-#include <IRremote.h> // подключаем библиотеку для IR приемника
+#include <IRremote.h> // IR library
 #include <Servo.h>
 
-IRrecv irrecv(2); // указываем пин, к которому подключен IR приемник
+IRrecv irrecv(2); // IR Pin
 decode_results results;
 Servo servo_8;
 
-void setup() {
-  servo_8.attach(8);
-   irrecv.enableIRIn();  // запускаем прием инфракрасного сигнала
-   Serial.begin(9600); // подключаем монитор порта
+void setup(){
+   servo_8.attach(8);
+   irrecv.enableIRIn();  // start receiving the infrared signal
+   Serial.begin(9600); 
 
-   pinMode(12, OUTPUT); // пин 12 будет выходом (англ. «output»)
-   pinMode(2, INPUT); // пин A0 будет входом (англ. «intput»)
-  
+   pinMode(12, OUTPUT);
+   pinMode(2, INPUT);
 }
 
 void loop() {
-   if (irrecv.decode(&results)) // если данные пришли выполняем команды
+   if (irrecv.decode(&results)) // if the data has arrived, execute the commands
    {
-      Serial.println(results.value); // отправляем полученные данные на порт
-    
+      Serial.println(results.value); // send the received data to the port
         
-      if (results.value == 16601263) { //настраиваем значение на нужную кнопку
-      servo_8.write(90);
-   }
-      if (results.value == 16584943) { //настраиваем значение на нужную кнопку 
-      servo_8.write(0);
-   }
-      irrecv.resume(); // принимаем следующий сигнал на ИК приемнике
+      if (results.value == 16601263) // adjust the value to the desired button
+         servo_8.write(90);
+
+      if (results.value == 16584943) // adjust the value to the desired button
+         servo_8.write(0);
+
+      irrecv.resume(); // receive the next signal on the IR receiver
    }
 }
-
-
-  
