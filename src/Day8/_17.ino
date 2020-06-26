@@ -23,39 +23,42 @@ int duration, distance;
 void playTone(int tone, int duration);
 
 void setup() {
-pinMode(TRIG_PIN, OUTPUT);
-pinMode(ECHO_PIN, INPUT);
-pinMode(BUZZER_PIN, OUTPUT);
+	pinMode(TRIG_PIN, OUTPUT);
+	pinMode(ECHO_PIN, INPUT);
+	pinMode(BUZZER_PIN, OUTPUT);
 }
 
 void loop() {
-// для большей точности установим значение LOW на пине Trig
-digitalWrite(TRIG_PIN, LOW);
-delayMicroseconds(2);
-// Теперь установим высокий уровень на пине Trig
-digitalWrite(TRIG_PIN, HIGH);
-// Подождем 10 μs
-delayMicroseconds(10);
-digitalWrite(TRIG_PIN, LOW);
-// Узнаем длительность высокого сигнала на пине Echo
-duration = pulseIn(ECHO_PIN, HIGH);
-// Рассчитаем расстояние в см
-distance= duration*0.034/2;
+	// для большей точности установим значение LOW на пине Trig
+	digitalWrite(TRIG_PIN, LOW);
+	delayMicroseconds(2);
 
-//Издаем звук
-playTone(note_b_delay, 25);
+	// Теперь установим высокий уровень на пине Trig
+	digitalWrite(TRIG_PIN, HIGH);
 
-// Пауза для заданого растояния, полученного от датчика
-delayMicroseconds(duration);
+	// Подождем 10 μs
+	delayMicroseconds(10);
+	digitalWrite(TRIG_PIN, LOW);
 
+	// Узнаем длительность высокого сигнала на пине Echo
+	duration = pulseIn(ECHO_PIN, HIGH);
+
+	// Рассчитаем расстояние в см
+	distance= duration*0.034/2;
+
+	//Издаем звук
+	playTone(note_b_delay, 25);
+
+	// Пауза для заданого растояния, полученного от датчика
+	delayMicroseconds(duration);
 }
 
 //Описание функций
 void playTone(int tone, int duration) {
-for (long i = 0; i < duration * 100L; i += tone * 2) {
-digitalWrite(BUZZER_PIN, HIGH);
-delayMicroseconds(tone);
-digitalWrite(BUZZER_PIN, LOW);
-delayMicroseconds(tone);
-}
+	for (long i = 0; i < duration * 100L; i += tone * 2) {
+		digitalWrite(BUZZER_PIN, HIGH);
+		delayMicroseconds(tone);
+		digitalWrite(BUZZER_PIN, LOW);
+		delayMicroseconds(tone);
+	}
 }
