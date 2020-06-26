@@ -12,7 +12,7 @@ void setup()
     pinMode(in3, OUTPUT);
     pinMode(in4, OUTPUT);
   
-  pinMode(2, INPUT);
+    pinMode(2, INPUT);
 }
 
 void loop()
